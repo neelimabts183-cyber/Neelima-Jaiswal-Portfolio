@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neelima Jaiswal's personal portfolio.">
+  <title>Neelima Jaiswal | Resume Portfolio</title>
+
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 70px;
+    }
+
+  
+    :root {
+      --navy: #594765;
+      --accent: #A783AA;
+      --accent-light: #F0E8F2;
+      --text: #393440;
+      --muted: #77717D;
+      --bg: #FAF8FB;
+      --white: #ffffff;
+      --border: #E9E1EA;
+    }
+
+    body {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+  
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+  
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+  
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+
+    .hero {
+      padding: 90px 0 80px;
+      background:#FFFCFE;
+      border-bottom: 1px solid var(--border);
+      
+      
+    }
+
+
+    .hero .container {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid var(--accent-light);
+    }
+    .avatar img {
+      width: 100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-label {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 8px;
+    }
+
+    .hero-role {
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-location {
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 2px solid var(--accent);
+    }
+
+    .btn:hover {
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #9d4f31;
+      border-color: #9d4f31;
+    }
+
+    .btn-outline {
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-light);
+    }
+
+  
+    .about-text {
+      font-size: 18px;
+      max-width: 800px;
+    }
+
+    .highlights {
+      display: flex;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .highlight {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .highlight strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: var(--navy);
+    }
+
+    .highlight span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+  
+    .timeline {
+      border-left: 2px solid var(--border);
+      margin-left: 8px;
+      padding-left: 32px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -41px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--accent);
+    }
+
+    .timeline-year {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .score {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 2px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 20px;
+    }
+
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .skill-list li {
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+
+    .level {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+  
+    .project {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .project h3 {
+      font-size: 22px;
+    }
+
+    .project-org {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .tag {
+      flex-shrink: 0;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .tag-lead {
+      background: var(--accent);
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+    }
+
+    .bullets li::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+
+    
+      
+      
+      
+      
+    
+
+    
+      
+      
+      
+    
+
+    
+      
+    
+
+   
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chips li {
+      padding: 10px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 15px;
+    }
+
+    .chips li:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    
+    
+      
+      
+      
+    
+
+   
+    .contact {
+      background: var(--navy);
+      color: #dde2ec;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--white);
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .contact p {
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+
+    .contact .btn-outline {
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .contact .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+   
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      background: var(--bg);
+    }
+
+    
+    @media (max-width: 800px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .highlights {
+        flex-direction: column;
+      }
+
+      .skills-grid,
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    
+    @media (max-width:600px) {
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .project-top {
+        flex-direction: column;
+      }
+
+      
+        
+      
+    }
+
+    
+    @media print {
+      .navbar,
+      .buttons,
+      .contact {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      section {
+        padding: 24px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  
+    
+  
+
+  <main>
+
+   
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="avatar">
+          <img src="./profile.jpeg" alt="Neelima Jaiswal">
+        </div>
+        <div>
+              <p class="hero-label">Business Student | stratergy &amp;Research</p>
+              <h1>Neelima Jaiswal</h1>    
+              <p class="hero-role">BBA – Digital Business &amp; Entrepreneurship</p>    
+              <p class="hero-location">📍 Gorakhpur, Uttar Pradesh, India</p> 
+
+          <div class="buttons"> 
+            <a href="mailto:neelima.jaiswal1902@gmail.com" class="btn btn-primary">Email Me</a>
+           
+            <a href="https://www.linkedin.com/in/neelima-jaiswal19" class="btn btn-outline" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Professional Profile</h2>
+
+        <p class="about-text">
+          I am a BBA student at IIM Bangalore with an interest in business stratergy,
+          market research and brand management. I enjoy understanding business problems,
+          exploring market trends and developing pratical solutions. Through business case 
+          competitions, I have gained exposure to research, case analysis, teamwork 
+          and presenting ideas. I am looking to build on these experiences and gain
+          practical experience in the business and marketing field.
+          
+        </p>
+
+        <div class="highlights">
+          <div class="highlight">
+            <strong>3</strong>
+            <span>Business case competitions</span>
+          </div>
+          <div class="highlight">
+            <strong>1</strong>
+            <span>Team leadership role</span>
+          </div>
+          <div class="highlight">
+            <strong>2</strong>
+            <span>Languages spoken fluently</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <p class="timeline-year">2026 – 2029</p>
+            <h3>Bachelor of Business Administration (BBA)</h3>
+            <p>Digital Business &amp; Entrepreneurship</p>
+            <p>Indian Institute of Management Bangalore</p>
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-year">2026</p>
+            <h3>Class XII – Senior Secondary Education</h3>
+            <p>Maharana Pratap Girls Inter College</p>
+            <p>State Board</p>
+            
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-year">2024</p>
+            <h3>Class X – Secondary Education</h3>
+            <p>The Royal Academy</p>
+            <p>CBSE</p>
+            
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Key Skills</h2>
+
+        <div class="skills-grid">
+
+          <div class="card">
+            <h3>Core Strengths</h3>
+            <ul class="skill-list">
+              <li>Research &amp; Information Gathering</li>
+              <li>Strategic Thinking &amp; Problem-Solving</li>
+              <li>Business Case Analysis</li>
+              <li>Communication &amp; Presentation Skills</li>
+              <li>Team Coordination &amp; Leadership</li>
+              <li>Time Management</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Tools</h3>
+            <ul class="skill-list">
+              <li>Microsoft Excel <span class="level">Intermediate</span></li>
+              <li>Microsoft PowerPoint <span class="level">Intermediate</span></li>
+            </ul>
+
+            <h3 style="margin-top: 28px;">Languages</h3>
+            <ul class="skill-list">
+              <li>English <span class="level">Fluent</span></li>
+              <li>Hindi <span class="level">Fluent</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects &amp; Case Competitions</h2>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>The Inflection Point</h3>
+              <p class="project-org">Business Case Competition · Great Lakes Institute of Management · 2026</p>
+            </div>
+            <span class="tag tag-lead">Team Leader</span>
+          </div>
+          <ul class="bullets">
+            <li>Review the business case and identify the key issues.</li>
+            <li>Contributed to discussion on possible solutions.</li>
+            <li>Presented the findings as part of the competition.</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>Management 360</h3>
+              <p class="project-org">Business Case Competition · Department of Management Studies, IIT Madras · 2026</p>
+            </div>
+            <span class="tag">Participant</span>
+          </div>
+          <ul class="bullets">
+            <li>Conducted research on the business problem and contributed to the core idea.</li>
+            <li>Helped developing the strategic approach and supporting insights.</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>CaseWave</h3>
+              <p class="project-org">Business Case Competition · NIT Calicut · 2026</p>
+            </div>
+            <span class="tag tag-lead">Team Leader</span>
+          </div>
+          <ul class="bullets">
+            <li>Led a team in analysing a business case involving Ditto, an insurance intermediary connecting customers with insurance providers.</li>
+            <li>Coordinated the team's analysis of the business problem and possible solutions.</li>
+            <li>Contributed to developing the proposed strategic solution.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    
+    
+
+   
+    <section id="interests">
+      <div class="container">
+        <h2 class="section-title">Areas of Interest</h2>
+
+        <ul class="chips">
+          <li>Business Strategy &amp; Development</li>
+          <li>Corporate Relations &amp; Partnerships</li>
+          <li>Brand Management &amp; Marketing</li>
+          <li>Market Research</li>
+          <li>Public Relations</li>
+          <li>Growth &amp; Market Development</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section id="additional">
+      <div class="container">
+        <h2 class="section-title">Additional Information</h2>
+
+        <div class="card">
+          <ul class="bullets">
+            <li>Currently developing proficiency in Microsoft Excel, PowerPoint and website development.</li>
+            <li>Interested in gaining practical exposure to business strategy, corporate partnerships and industry outreach.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Let's Connect</h2>
+        <p>
+          I'm looking for opportunities to gain hands-on experience in business strategy,
+          corporate partnerships and marketing. Feel free to get in touch.
+        </p>
+
+        <div class="buttons" style="justify-content: center;">
+          <a href="mailto:neelima.jaiswal1902@gmail.com" class="btn btn-primary">neelima.jaiswal1902@gmail.com</a>
+         
+          <a href="https://www.linkedin.com/in/neelima-jaiswal19" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Neelima Jaiswal · Gorakhpur, Uttar Pradesh, India</p>
+  </footer>
+
+</body>
+</html>
